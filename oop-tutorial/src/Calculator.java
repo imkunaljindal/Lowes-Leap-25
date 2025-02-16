@@ -1,6 +1,10 @@
 public class Calculator {
 
-    int x = 10;
+    final int x;
+
+    Calculator() {
+        this.x = 10;
+    }
 
     int add(int a, int b) {
         System.out.println("Calculator wala add");

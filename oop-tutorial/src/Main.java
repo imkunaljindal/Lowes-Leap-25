@@ -25,8 +25,36 @@ public class Main {
 //        ArrayList<Integer> arr = new ArrayList<>();
 //        List<Integer> l = new ArrayList<>();
 
-        Person p = new Person();
+     //   Person p = new Person();
 //        p.sayHello();
+
+//        IronMan ironMan = new IronMan();
+//        ironMan.hello();
+//
+//        Avenger avenger = new IronMan();
+//        avenger.hello();
+//
+//        XMen wolverine = new Wolverine();
+//        wolverine.getAlmaMatter();
+//        wolverine.getSpeciality();
+//
+//        Jean jean = new Jean();
+//        jean.getAlmaMatter();
+//        jean.getSpeciality();
+//
+//        XMen xmen = new XMen();
+//        xmen.getSpeciality();
+
+        Student kohli = new Student("Virat");
+        System.out.println(Student.count);
+        Student ronaldo = new Student("Ronaldo");
+        System.out.println(Student.count);
+        Student Roger = new Student("Roger");
+        System.out.println(Student.count);
+
+        Student.hello();
+
+
 
     }
 }

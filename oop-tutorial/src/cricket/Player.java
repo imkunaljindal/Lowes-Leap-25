@@ -2,9 +2,7 @@ package cricket;
 
 import ecommerce.Person;
 
-public class Player extends Person{
+public class Player extends ICT implements RCB,MRF{
 
-    public void sayHello() {
-        super.pan = "dfsfsf";
-    }
+
 }

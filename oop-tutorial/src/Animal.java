@@ -1,4 +1,4 @@
-public class Animal {
+public final class Animal extends Calculator{
 
     int legs;
     int eyes;
