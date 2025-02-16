@@ -142,12 +142,13 @@ public class Main {
 //        }
 
         Scanner sc = new Scanner(System.in);
+//
+//        int x = sc.nextInt();
+//        double a = sc.nextDouble();
+//        System.out.println(x);
 
-        int x = sc.nextInt();
-        double a = sc.nextDouble();
-        System.out.println(x);
-
-
+        String text = sc.next();  // only one word as input ' '
+        System.out.println(text.charAt(0));
 
     }
 
