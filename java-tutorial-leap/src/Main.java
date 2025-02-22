@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
@@ -141,16 +138,53 @@ public class Main {
 //            System.out.println(c);
 //        }
 
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
 //
 //        int x = sc.nextInt();
 //        double a = sc.nextDouble();
 //        System.out.println(x);
 
-        String text = sc.next();  // only one word as input ' '
-        System.out.println(text.charAt(0));
+//        String text = sc.next();  // only one word as input ' '
+//        System.out.println(text.charAt(0));
+//
+//        int[][] matrix = new int[3][2];
+//
+//        for(int i=0;i<matrix.length;i++) {
+//            for(int j=0;j<matrix[0].length;j++) {
+//                System.out.println(matrix[i][j]);
+//            }
+//        }
 
+//        int arr[] = {3,1,5,4};
+//        Arrays.sort(arr);
+//
+//        for(int x: arr)
+//        System.out.println(x);
+//
+//        ArrayList<Integer> arrayList = new ArrayList<>();
+//        arrayList.add(3);
+//        arrayList.add(1);
+//        arrayList.add(2);
+//
+//        Collections.sort(arrayList);
+//        System.out.println(arrayList);
+
+        Set<Integer> st = new HashSet<>();
+        Set<Integer> st2 = new TreeSet<>();
+
+        st.add(3);
+        st2.add(2);
+
+        List<Integer> l = new ArrayList<>();
+        l.add(10);
+        l.add(3);
+        l.add(5);
+
+        Collections.sort(l);
+        System.out.println(l);
+
+        List<Integer> l1 = new LinkedList<>();
+        LinkedList<Integer> l2 = new LinkedList<>();
     }
-
 }
 
