@@ -1,4 +1,4 @@
-package com.leap.student_management_service;
+package com.leap.student_management_service.model;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
