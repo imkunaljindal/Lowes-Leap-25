@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CustomerService {
@@ -20,5 +21,18 @@ public class CustomerService {
 
     public List<Customer> getAllCustomer() {
         return customerRepository.findAll();
+    }
+
+    public Customer getCustomerById(int id) {
+        Optional<Customer> customerOptional = customerRepository.findById(id);
+        if(customerOptional.isEmpty()) {
+            throw new RuntimeException("Invalid customer Id");
+        }
+
+        return customerOptional.get();
+    }
+
+    public void deleteAllCustomers() {
+        customerRepository.deleteAll();
     }
 }

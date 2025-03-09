@@ -16,6 +16,7 @@ public class CustomerController {
 
     @PostMapping
     public String addCustomer(@RequestBody Customer customer) {
+        System.out.println(customer.getEmail());
         customerService.addCustomer(customer);
         return "Customer added successfully";
     }
@@ -26,8 +27,17 @@ public class CustomerController {
     }
 
     // find a customer based on id
+    @GetMapping("/id/{id}")
+    public Customer getCustomerById(@PathVariable("id") int id) {
+        return customerService.getCustomerById(id);
+    }
 
     // empty your table
+    @DeleteMapping("/all")
+    public void deleteAllCustomer() {
+        customerService.deleteAllCustomers();
+    }
 
-    // delete a customer based on id
+    // delete a customer based on id  //
+
 }
