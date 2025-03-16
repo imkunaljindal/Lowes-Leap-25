@@ -14,13 +14,10 @@ import lombok.experimental.FieldDefaults;
 public class Address {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     String flatNo;
-
-    String building;
-
-    String locality;
 
     String city;
 

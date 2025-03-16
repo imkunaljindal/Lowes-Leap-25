@@ -19,6 +19,7 @@ import java.sql.Date;
 public class Customer {
 
     @Id     // primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     String name;
@@ -33,7 +34,7 @@ public class Customer {
 
     Gender gender;
 
-    @OneToOne(mappedBy = "customer")
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
     Address address;
 
 

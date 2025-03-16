@@ -20,6 +20,7 @@ import java.util.List;
 public class OrderEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     String orderId;  // UUID
