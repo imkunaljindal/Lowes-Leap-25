@@ -7,18 +7,18 @@ import com.example.leapkart.entity.Customer;
 public class CustomerConvertor {
 
     public static CustomerResponse customeToCustomerResponse(Customer customer) {
-        CustomerResponse customerResponse = new CustomerResponse();
-        customerResponse.setEmail(customer.getEmail());
-        customerResponse.setName(customer.getName());
-        return customerResponse;
+        return CustomerResponse.builder()
+                .email(customer.getEmail())
+                .name(customer.getName())
+                .build();
     }
 
     public static Customer customerRequestToCustomer(CustomerRequest customerRequest) {
-        Customer customer = new Customer();
-        customer.setName(customerRequest.getName());
-        customer.setEmail(customerRequest.getEmail());
-        customer.setAge(customerRequest.getAge());
-        customer.setGender(customerRequest.getGender());
-        return customer;
+        return Customer.builder()
+                .age(customerRequest.getAge())
+                .name(customerRequest.getName())
+                .email(customerRequest.getEmail())
+                .gender(customerRequest.getGender())
+                .build();
     }
 }

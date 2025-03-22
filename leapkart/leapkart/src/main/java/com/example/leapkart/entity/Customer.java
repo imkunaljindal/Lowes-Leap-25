@@ -16,6 +16,7 @@ import java.sql.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "customers")
+@Builder
 public class Customer {
 
     @Id     // primary key
@@ -32,6 +33,7 @@ public class Customer {
     @CreationTimestamp
     Date createdAt;
 
+    @Enumerated(EnumType.STRING)
     Gender gender;
 
     @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)

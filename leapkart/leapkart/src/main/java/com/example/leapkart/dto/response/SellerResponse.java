@@ -1,13 +1,13 @@
 package com.example.leapkart.dto.response;
 
+import lombok.*;
 
-
-import lombok.*;@Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CustomerResponse {
+@Getter
+public class SellerResponse {
 
     String name;
 

@@ -1,5 +1,6 @@
 package com.example.leapkart.entity;
 
+import com.example.leapkart.entity.Enum.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -13,6 +14,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "seller")
+@Builder
 public class Seller {
 
     @Id
@@ -22,6 +24,8 @@ public class Seller {
     String name;
 
     String email;
+
+    Gender gender;
 
     String gstNo;
 
