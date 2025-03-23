@@ -1,15 +1,13 @@
 package com.example.leapkart.dto.request;
 
 import com.example.leapkart.entity.Enum.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class CustomerRequest {
 
     String name;
@@ -19,4 +17,14 @@ public class CustomerRequest {
     int age;
 
     Gender gender;
+
+//    @Override
+//    public String toString() {
+//        return "CustomerRequest{" +
+//                "name='" + name + '\'' +
+//                ", email='" + email + '\'' +
+//                ", age=" + age +
+//                ", gender=" + gender +
+//                '}';
+//    }
 }
