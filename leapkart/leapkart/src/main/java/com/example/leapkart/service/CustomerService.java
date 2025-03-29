@@ -1,8 +1,10 @@
 package com.example.leapkart.service;
 
+import com.example.leapkart.convertor.AddressConvertor;
 import com.example.leapkart.convertor.CustomerConvertor;
 import com.example.leapkart.dto.request.CustomerRequest;
 import com.example.leapkart.dto.response.CustomerResponse;
+import com.example.leapkart.entity.Address;
 import com.example.leapkart.entity.Customer;
 import com.example.leapkart.entity.Enum.Gender;
 import com.example.leapkart.repository.CustomerRepository;
@@ -22,7 +24,12 @@ public class CustomerService {
 
     public CustomerResponse addCustomer(CustomerRequest customerRequest) {
         Customer customer = CustomerConvertor.customerRequestToCustomer(customerRequest);
-        Customer savedCustomer = customerRepository.save(customer);
+        Address address = AddressConvertor.addressRequestToAddress(customerRequest.getAddressRequest());
+
+        customer.setAddress(address);
+        address.setCustomer(customer);
+
+        Customer savedCustomer = customerRepository.save(customer);  // customer + address
         return CustomerConvertor.customeToCustomerResponse(savedCustomer);
     }
 
@@ -37,14 +44,15 @@ public class CustomerService {
         return customerResponses;
     }
 
-    public CustomerResponse getCustomerById(int id) {
+    public Customer getCustomerById(int id) {
         Optional<Customer> customerOptional = customerRepository.findById(id);
         if (customerOptional.isEmpty()) {
             throw new RuntimeException("Invalid customer Id");
         }
 
         Customer savedCustomer = customerOptional.get();
-        return CustomerConvertor.customeToCustomerResponse(savedCustomer);
+//        return CustomerConvertor.customeToCustomerResponse(savedCustomer);
+        return savedCustomer;
     }
 
     public void deleteAllCustomers() {

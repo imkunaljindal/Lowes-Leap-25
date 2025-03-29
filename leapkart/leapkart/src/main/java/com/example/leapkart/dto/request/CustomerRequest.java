@@ -18,6 +18,8 @@ public class CustomerRequest {
 
     Gender gender;
 
+    AddressRequest addressRequest;
+
 //    @Override
 //    public String toString() {
 //        return "CustomerRequest{" +

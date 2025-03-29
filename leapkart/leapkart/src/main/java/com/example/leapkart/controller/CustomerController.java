@@ -52,7 +52,7 @@ public class CustomerController {
     public ResponseEntity getCustomerById(@PathVariable("id") int id) {
         try {
             logger.info("Received get customer request for id: "+id);
-            CustomerResponse response = customerService.getCustomerById(id);
+            Customer response = customerService.getCustomerById(id);
             return new ResponseEntity(response, HttpStatus.FOUND);
         } catch (Exception e) {
             logger.error("Not able to find customer for id: "+id);

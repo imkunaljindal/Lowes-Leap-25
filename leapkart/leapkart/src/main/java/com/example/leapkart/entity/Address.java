@@ -1,5 +1,6 @@
 package com.example.leapkart.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -11,6 +12,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "address")
+@Builder
 public class Address {
 
     @Id
@@ -25,5 +27,6 @@ public class Address {
 
     @OneToOne
     @JoinColumn
+    @JsonBackReference
     Customer customer;
 }

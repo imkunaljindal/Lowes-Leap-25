@@ -14,6 +14,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "product")
+@Builder
 public class Product {
 
     @Id

@@ -1,6 +1,8 @@
 package com.example.leapkart.entity;
 
 import com.example.leapkart.entity.Enum.Gender;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -8,6 +10,8 @@ import org.hibernate.annotations.AnyDiscriminator;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -37,7 +41,11 @@ public class Customer {
     Gender gender;
 
     @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
+    @JsonManagedReference
     Address address;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    List<OrderEntity> orders = new ArrayList<>();
 
 
 }

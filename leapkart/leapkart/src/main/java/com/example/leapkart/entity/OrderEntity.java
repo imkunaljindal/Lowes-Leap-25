@@ -39,5 +39,9 @@ public class OrderEntity {
     @ManyToMany(mappedBy = "orders")
     List<Product> products;
 
+    @ManyToOne
+    @JoinColumn
+    Customer customer;
+
 
 }
