@@ -21,4 +21,9 @@ public class MarvelController {
     public List<MarvelResponse> getAllHeroes() {
         return marvelService.getAllHeroes();
     }
+
+    @GetMapping("/id")
+    public MarvelResponse getHero(@RequestParam("id") int id) {
+        return marvelService.getHero(id);
+    }
 }

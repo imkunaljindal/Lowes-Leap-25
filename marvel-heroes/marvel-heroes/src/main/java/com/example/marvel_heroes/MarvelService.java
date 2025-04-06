@@ -39,4 +39,11 @@ public class MarvelService {
 
         return responses;
     }
+
+    public MarvelResponse getHero(int id) {
+        Marvel hero = marvelRepository.findById(id).get();
+        return  MarvelResponse.builder()
+                .name(hero.getName())
+                .build();
+    }
 }
